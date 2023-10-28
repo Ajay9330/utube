@@ -11,7 +11,7 @@ function Sidebar() {
 
   return (
     <div
-      className={` bg-gray-990 shadow-sm shadow-white p-4 h-screen ${
+      className={`sticky top-0 left-0 bg-gray-990 shadow-sm shadow-white p-4 h-screen ${
         sidebarOpen
 
         
@@ -40,7 +40,7 @@ function Sidebar() {
       </h2> */}
       <ul className='flex flex-col space-y-2'>
         <li
-          className={`mb-3 rounded-lg p-1  hover:bg-blue-50 transition duration-300   ${location.pathname === '/' ? 'bg-white hover:bg-white transition duration-300' : ''}`}
+          className={` rounded-lg p-1  hover:bg-blue-50 transition duration-300   ${location.pathname === '/' ? 'bg-white hover:bg-white transition duration-300' : ''}`}
         >
           <Link
            to="/"
@@ -78,7 +78,7 @@ function Sidebar() {
           </Link>
         </li>
         <li
-          className={`mb-2 rounded-lg p-1 hover:bg-blue-50 transition duration-300 ${location.pathname === '/music' ? 'bg-blue-100' : ''}`}
+          className={`mb-3 rounded-lg p-1 hover:bg-blue-50 transition duration-300 ${location.pathname === '/music' ? 'bg-blue-100' : ''}`}
         >
           <Link
             to="/music"

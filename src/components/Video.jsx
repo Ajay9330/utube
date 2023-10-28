@@ -4,7 +4,7 @@ import React from 'react';
 
 function Video({ videoData }) {
   return (
-    <div className="bg-white shadow-md rounded-lg">
+    <div className="bg-white shadow-md rounded-xl m-4">
       <img
         src={videoData.thumbnailUrl}
         alt={videoData.title}

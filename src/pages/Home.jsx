@@ -1,6 +1,5 @@
-// Home.jsx
-
 import React, { useState, useEffect } from 'react';
+import Video from '../components/Video';
 
 // Sample data for video thumbnails (you should replace this with actual API data)
 const videoData = [
@@ -27,21 +26,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className=''>
+    <div className="">
       <h1 className="text-2xl font-semibold mb-4">Home</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {videos.map((video) => (
-          <div key={video.id} className="bg-white shadow-md rounded-lg">
-            <img
-              src={video.thumbnailUrl}
-              alt={video.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold">{video.title}</h2>
-            </div>
-          </div>
+          <Video videoData={video} />
         ))}
       </div>
     </div>

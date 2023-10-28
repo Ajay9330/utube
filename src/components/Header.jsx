@@ -1,39 +1,34 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
-  // Function to handle search input changes
   const handleSearchInputChange = (event) => {
     const searchQuery = event.target.value;
     // You can handle the search input here
   };
 
-  // Function to handle search form submission
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     // You can perform the search here
   };
 
   return (
-    <header className=" bg-gray-700 border-b border-dashed border-red-500 text-white p-4 shadow-md">
-      <div className="container mx-auto flex items-center justify-between">
+    <header className=" sticky top-0 bg-gray-700 border-b border-dashed border-red-500 text-white p-4 shadow-md">
+      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
         <div className="flex items-center">
-          {/* Logo or App Title */}
-          <a href="/" className="text-2xl font-semibold">Logo</a>
-
-          {/* Navigation Links */}
+          <Link to="/" className="text-2xl font-semibold">Logo</Link>
           <nav className="ml-6">
-            <a href="/" className="text-gray-400 hover:text-white px-3 py-2">Home</a>
-            <a href="/trending" className="text-gray-400 hover:text-white px-3 py-2">Trending</a>
-            <a href="/music" className="text-gray-400 hover:text-white px-3 py-2">Music</a>
+            <Link to="/" className="text-gray-400 hover:text-white px-3 py-2">Home</Link>
+            <Link to="/trending" className="text-gray-400 hover:text-white px-3 py-2">Trending</Link>
+            <Link to="/music" className="text-gray-400 hover:text-white px-3 py-2">Music</Link>
           </nav>
         </div>
 
-        {/* Search Bar */}
-        <form onSubmit={handleSearchSubmit} className="flex items-center">
+        <form onSubmit={handleSearchSubmit} className="flex items-center mt-4 sm:mt-0">
           <input
             type="text"
             placeholder="Search"
-            className="px-4 py-2 rounded-l-md focus:outline-none bg-gray-800 text-white"
+            className="px-4 py-2 rounded-l-md focus:outline-none bg-gray-800 text-white focus:bg-black border-b-blue-500"
             onChange={handleSearchInputChange}
           />
           <button

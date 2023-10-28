@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      <div className="flex">
+      <div className="flex ">
         <Sidebar /> {/* Add the Sidebar component */}
         <div className="flex-1">
           <Header />
