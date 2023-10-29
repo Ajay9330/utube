@@ -1,17 +1,14 @@
-// Watch.jsx
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { createYouTubeVideoIframe } from '../services/videoService'; 
 
 function Watch() {
   const { videoId } = useParams();
 
-  // Sample video data (you should replace this with actual API data)
   const videoData = {
     id: videoId,
     title: 'Sample Video Title',
     description: 'This is a sample video description.',
-    videoUrl: 'https://www.youtube.com/embed/VIDEO_ID',
   };
 
   return (
@@ -20,11 +17,7 @@ function Watch() {
 
       {/* Video Player */}
       <div className="aspect-w-16 aspect-h-9">
-        <iframe
-          title={videoData.title}
-          src={videoData.videoUrl}
-          allowFullScreen
-        />
+        {createYouTubeVideoIframe(videoId)}
       </div>
 
       <p className="text-gray-600 mt-4">{videoData.description}</p>

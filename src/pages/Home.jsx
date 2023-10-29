@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Video from '../components/Video';
+import { fetchYouTubeVideos } from '../services/api';
 
-// Sample data for video thumbnails (you should replace this with actual API data)
 const videoData = [
   {
     id: 1,
@@ -13,23 +13,31 @@ const videoData = [
     title: 'Sample Video 2',
     thumbnailUrl: 'https://example.com/thumbnail2.jpg',
   },
-  // Add more video objects here
+
 ];
 
 const Home = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    // In a real app, you would fetch video data from an API and update the state
-    // Here, we're using the sample data defined above
-    setVideos(videoData);
+  
+    async function fetchHomeVideos() {
+      try {
+        const videoData = await fetchYouTubeVideos('', 5); 
+        setVideos(videoData);
+      } catch (error) {
+        console.error('Error fetching home videos', error);
+      }
+    }
+
+    fetchHomeVideos();
   }, []);
 
   return (
     <div className="">
-      <h1 className="text-2xl font-semibold mb-4">Home</h1>
+      <h1 className="text-2xl text-white text-center  font-semibold mb-4">Home</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {videos.map((video) => (
           <Video videoData={video} />
         ))}
