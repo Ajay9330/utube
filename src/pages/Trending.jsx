@@ -9,7 +9,7 @@ const Trending = () => {
     // Fetch trending videos
     async function fetchTrendingVideos() {
       try {
-        const videoData = await fetchPopularVideos( 10); 
+        const videoData = await fetchPopularVideos( 20); 
         setVideos(videoData);
       } catch (error) {
         console.error('Error fetching trending videos', error);

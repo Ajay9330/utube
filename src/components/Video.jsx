@@ -1,8 +1,12 @@
 import React from 'react';
 
-function Video({ videoData }) {
+function Video({ videoData, onVideoClick }) {
+  const handleVideoClick = () => {
+    onVideoClick(videoData);
+  }
+
   return (
-    <div className="bg-white shadow-md rounded-xl m-4">
+    <div className="bg-white shadow-md rounded-xl m-4" onClick={handleVideoClick}>
       <img
         src={videoData.snippet.thumbnails.medium.url}
         alt={videoData.snippet.title}

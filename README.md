@@ -10,6 +10,8 @@ utube
 ├─ public
 │  └─ vite.svg
 ├─ README.md
+├─ research_resource
+│  └─ category_info.txt
 ├─ src
 │  ├─ App.css
 │  ├─ App.jsx
@@ -30,7 +32,7 @@ utube
 │  │  └─ Watch.jsx
 │  └─ services
 │     ├─ api.js
-│     ├─ searchService.js
+│     ├─ ip.js
 │     └─ videoService.js
 ├─ tailwind.config.js
 └─ vite.config.js

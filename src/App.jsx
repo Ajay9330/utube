@@ -28,7 +28,7 @@ function App() {
     <Router>
       <div className="flex">
         <Sidebar />
-        <div className="flex-1">
+        <div className="flex-1 ">
           <Header />
           <MiniPlayer videoData={miniPlayerData} clearMiniPlayer={clearMiniPlayer} />
           <div className="overflow-y-auto h-auto"> {/* Add this container for scrolling content */}

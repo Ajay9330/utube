@@ -18,6 +18,7 @@ function Sidebar() {
           ? 'w-64 transition-all duration-300 ease-in-out'
           : 'w-16 transition-all duration-300 ease-in-out'
       }`}
+      
     >
       <button onClick={toggleSidebar} className=" text-white hover:underline ">
         {sidebarOpen ? (
@@ -69,7 +70,7 @@ function Sidebar() {
             }`}
           >
             {sidebarOpen ? (
-              <span className='flex gap-5'>
+              <span className='flex gap-2'>
                 <i className="material-icons">trending_up</i> Trending
               </span>
             ) : (
@@ -87,7 +88,7 @@ function Sidebar() {
             }`}
           >
             {sidebarOpen ? (
-              <span className='flex gap-5'>
+              <span className='flex gap-3'>
                 <i className="material-icons">music_note</i> Music
               </span>
             ) : (

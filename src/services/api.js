@@ -10,7 +10,7 @@ const fetchUserLocation = async () => {
 };
 
 // Function to fetch YouTube videos
-export const fetchYouTubeVideos = async (searchQuery, maxResults = 5) => {
+export const fetchYouTubeVideos = async (searchQuery, maxResults = 20) => {
   try {
     const userLocation = await fetchUserLocation();
     const API_URL = 'https://www.googleapis.com/youtube/v3/search';
@@ -33,7 +33,7 @@ export const fetchYouTubeVideos = async (searchQuery, maxResults = 5) => {
 };
 
 // Function to fetch popular or trending videos
-export const fetchPopularVideos = async (maxResults = 5) => {
+export const fetchPopularVideos = async (maxResults = 20) => {
   try {
     const userLocation = await fetchUserLocation();
     const API_URL = 'https://www.googleapis.com/youtube/v3/videos';
@@ -68,6 +68,25 @@ export const searchVideosByLocation = async (latitude, longitude, radius, query)
         locationRadius: `${radius}mi`,
         q: query,
         type: 'video',
+      },
+    });
+
+    return response.data.items;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const fetchPlaylistItems = async (playlistId, maxResults = 20) => {
+  try {
+    const API_URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
+
+    const response = await axios.get(API_URL, {
+      params: {
+        key: API_KEY,
+        part: 'snippet',
+        maxResults,
+        playlistId, // The ID of the playlist you want to fetch
       },
     });
 
