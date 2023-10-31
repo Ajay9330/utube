@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Video from '../components/Video';
-import { fetchYouTubeVideos } from '../services/api';
+import {  searchYouTubeVideos } from '../services/api';
 
 const videoData = [
   {
@@ -23,7 +23,7 @@ const Home = () => {
   
     async function fetchHomeVideos() {
       try {
-        const videoData = await fetchYouTubeVideos('devine'); 
+        const videoData = await searchYouTubeVideos('devine'); 
         setVideos(videoData);
       } catch (error) {
         console.error('Error fetching home videos', error);
@@ -39,7 +39,7 @@ const Home = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {videos.map((video) => (
-          <Video videoData={video} />
+          <Video key={video.id.videoId} videoData={video} />
         ))}
       </div>
     </div>

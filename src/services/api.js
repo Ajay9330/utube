@@ -10,7 +10,7 @@ const fetchUserLocation = async () => {
 };
 
 // Function to fetch YouTube videos
-export const fetchYouTubeVideos = async (searchQuery, maxResults = 20) => {
+export const searchYouTubeVideos = async (searchQuery, maxResults = 20) => {
   try {
     const userLocation = await fetchUserLocation();
     const API_URL = 'https://www.googleapis.com/youtube/v3/search';

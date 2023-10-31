@@ -24,7 +24,7 @@ const Music = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {musicVideos.map((video) => (
-          <Video videoData={video} />
+          <Video  key={video.snippet.resourceId.videoId} videoData={video} />
         ))}
       </div>
     </div>

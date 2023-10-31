@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { fetchYouTubeVideos } from '../services/api'; 
+import {  searchYouTubeVideos } from '../services/api'; 
 
 function Search({ setSearchResults }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +11,7 @@ function Search({ setSearchResults }) {
     e.preventDefault();
 
     try {
-      const videos = await fetchYouTubeVideos(searchTerm);
+      const videos = await searchYouTubeVideos(searchTerm);
       setSearchResults(videos);
       navigate(`/search-results`); 
     } catch (error) {
