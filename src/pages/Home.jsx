@@ -23,26 +23,32 @@ const Home = () => {
   
     async function fetchHomeVideos() {
       try {
-        const videoData = await searchYouTubeVideos('devine'); 
+        const videoData = await searchYouTubeVideos(''); 
         setVideos(videoData);
       } catch (error) {
         console.error('Error fetching home videos', error);
       }
     }
 
-    fetchHomeVideos();
+    // fetchHomeVideos();
   }, []);
 
-  return (
+  return (<>
     <div className="">
-      <h1 className="text-2xl text-white text-center  font-semibold mb-4">Home</h1>
+      <h1 className="text-2xl text-green-500 underline text-center text-zxl font-semibold mb-4">Home</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {videos.map((video) => (
-          <Video key={video.id.videoId} videoData={video} />
+          <Video key={video.id.videoId} k={video.id.videoId} videoData={video} />
         ))}
       </div>
+      {/* <div  className="plyr__video-embed" id="player">
+      <iframe src="https://www.youtube.com/embed/bTqVqk7FSmY" ></iframe>
+  </div> */}
     </div>
+   
+   
+    </>
   );
 };
 

@@ -7,7 +7,8 @@ import Trending from './pages/Trending';
 import Music from './pages/Music';
 import Watch from './pages/Watch';
 import Search from './pages/SearchResults';
-import MiniPlayer from './components/MiniPlayer';
+import MiniPlayer from './components/Miniplayer';
+import { VideoProvider } from './VideoContext'; 
 
 function App() {
   const [miniPlayerData, setMiniPlayerData] = useState(null);
@@ -24,9 +25,12 @@ function App() {
 
   }, []);
 
+
   return (
     <Router>
+      <VideoProvider>
       <div className="flex">
+
         <Sidebar />
         <div className="flex-1 ">
           <Header />
@@ -42,6 +46,8 @@ function App() {
           </div>
         </div>
       </div>
+      </VideoProvider>
+      
     </Router>
   );
 }

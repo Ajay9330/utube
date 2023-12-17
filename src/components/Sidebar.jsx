@@ -15,7 +15,7 @@ function Sidebar() {
         sidebarOpen
 
         
-          ? 'w-64 transition-all duration-300 ease-in-out'
+          ? 'w-44 transition-all duration-300 ease-in-out'
           : 'w-16 transition-all duration-300 ease-in-out'
       }`}
       
@@ -50,14 +50,17 @@ function Sidebar() {
            }`}
           >
             {sidebarOpen ? (
-              <span className='flex gap-5' >
-                <i className="material-icons md-dark md-inactive ">home</i> Home
+              <span className='flex gap-5 ' >
+               
+ <i className="material-icons md-dark md-inactive ">home</i> Home
               </span>
             ) : (
               <i className="material-icons">home</i>
+              
             )}
           </Link>
         </li>
+
         <li
           className={`mb-3 rounded-lg p-1 hover:bg-white transition duration-300  ${
             location.pathname === '/trending' ? 'bg-blue-100' : ''
@@ -70,7 +73,7 @@ function Sidebar() {
             }`}
           >
             {sidebarOpen ? (
-              <span className='flex gap-2'>
+              <span className='flex gap-3'>
                 <i className="material-icons">trending_up</i> Trending
               </span>
             ) : (
@@ -88,7 +91,7 @@ function Sidebar() {
             }`}
           >
             {sidebarOpen ? (
-              <span className='flex gap-3'>
+              <span className='flex gap-5'>
                 <i className="material-icons">music_note</i> Music
               </span>
             ) : (

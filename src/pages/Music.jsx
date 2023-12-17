@@ -20,11 +20,11 @@ const Music = () => {
 
   return (
     <div>
-      <h1 className="text-2xl text-white text-center font-semibold mb-4">Music</h1>
+      <h1 className="text-2xl text-green-500 underline text-center text-zxl font-semibold mb-4">Music</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {musicVideos.map((video) => (
-          <Video  key={video.snippet.resourceId.videoId} videoData={video} />
+          <Video  key={video.snippet.resourceId.videoId} k={video.snippet.resourceId.videoId} videoData={video} />
         ))}
       </div>
     </div>
