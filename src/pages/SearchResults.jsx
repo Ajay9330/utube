@@ -9,7 +9,7 @@ const SearchResults = ({ }) => {
   const [loading, setLoading] = useState(true);
   const { query } = useParams();
   useEffect(() => {
-    alert(query);
+    // alert(query);
     setLoading(true);
     async function fetchSearchResults() {
       try {
@@ -34,11 +34,11 @@ const SearchResults = ({ }) => {
           Search Results for "{query}"
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1   xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
           {loading ? (
             // Display skeleton when loading
             Array.from({ length: 12 }).map((_, index) => (
-              <ProfessionalSkeleton key={index} color="bg-blue-200" />
+              <ProfessionalSkeleton key={index} color="bg-blue-200 rounded-2xl -z-50" />
             ))
           ) : (
             // Display videos when not loading

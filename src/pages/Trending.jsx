@@ -28,10 +28,10 @@ const Trending = () => {
     <div>
       <h1 className="text-2xl text-green-500 underline text-center text-zxl font-semibold mb-4">Trending</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {loading ? (
           // Display skeleton when loading
-          Array.from({ length: 12 }).map((_, index) => <ProfessionalSkeleton key={index} color="bg-gray-800 rounded-lg" />)
+          Array.from({ length: 12 }).map((_, index) => <ProfessionalSkeleton key={index} color="bg-gray-800 rounded-lg  -z-50" />)
         ) : (
           // Display videos when not loading
           videos.map((video) => (

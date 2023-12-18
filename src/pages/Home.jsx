@@ -28,11 +28,11 @@ const Home = () => {
       <div className="">
         <h1 className="text-2xl text-green-500 underline text-center text-zxl font-semibold mb-4">Home</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 bg">
           {loading ? (
             // Display skeleton when loading
             Array.from({ length: 12 }).map((_, index) => (
-              <ProfessionalSkeleton key={index} color="bg-slate-900 rounded-lg" />
+              <ProfessionalSkeleton key={index} color="bg-slate-900 rounded-lg -z-50" />
             ))
           ) : (
             // Display videos when not loading
