@@ -7,7 +7,7 @@ import Trending from './pages/Trending';
 import Music from './pages/Music';
 import Watch from './pages/Watch';
 import Search from './pages/SearchResults';
-import MiniPlayer from './components/Miniplayer';
+import MiniPlayer from './components/Minip';
 import { VideoProvider } from './VideoContext'; 
 
 function App() {
