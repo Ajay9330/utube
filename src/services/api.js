@@ -13,7 +13,7 @@ const fetchUserLocation = async () => {
 export const searchYouTubeVideos = async (searchQuery, maxResults = 20) => {
   try {
     const userLocation = await fetchUserLocation();
-    const API_URL = 'https://www.googleapis.com/youtube/v3/searchsd,fns';
+    const API_URL = 'https://www.googleapis.com/youtube/v3/search';
     // console.log(API_KEY);
     const response = await axios.get(API_URL, {
       params: {

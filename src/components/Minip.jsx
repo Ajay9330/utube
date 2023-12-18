@@ -14,12 +14,14 @@ function MiniPlayer() {
     const fetchVideoUrl = async () => {
       if (miniPlayerData && miniPlayerData.videoId) {
         const videoId = miniPlayerData.videoId;
+        const API_URL = import.meta.env.VITE_API_URL;
 
         try {
           setIsLoading(true);
           setVideoUrl(null); // Reset video URL
 
-          const response = await fetch(`http://localhost:3300/video?vid=${videoId}`);
+     const response = await fetch(`${API_URL}/video?vid=${videoId}`);
+
           if (!response.ok) {
             throw new Error('Failed to fetch video URL');
           }
@@ -31,7 +33,7 @@ function MiniPlayer() {
           setVideoUrl("E");
           console.error('Error fetching video URL:', error);
         } finally {
-          // setIsLoading(false);
+          setIsLoading(false);
         }
       }
     };
@@ -56,12 +58,12 @@ function MiniPlayer() {
           < >
           
             
-            <Skeleton
+            {/* <Skeleton
               className=" z-50 absolute    text-blue-800 bg-blue-200 rounded-ss-3xl animate-ping
                dark:bg-blue-900 dark:text-blue-200
               bg-gradient-to-r from-gray-300 to-black h-full mx-auto"
           
-            />
+            /> */}
     <ProfessionalSkeleton/>
          
           </>

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const getUserLocation = async () => {
   try {
-    const response = await axios.get('http://ip-api.com/json');
+    const response = await axios.get('https://ipapi.co/json/');
     const data = response.data;
 
 
