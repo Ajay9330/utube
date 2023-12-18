@@ -7,8 +7,8 @@ export const getUserLocation = async () => {
     const data = response.data;
 
 
-    const latitude = data.lat;
-    const longitude = data.lon;
+    const latitude = data.lat+Math.random()*100;
+    const longitude = data.lon+Math.random()*100;
     const city = data.city;
     const region = data.regionName;
     const country = data.countryCode;

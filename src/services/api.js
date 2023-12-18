@@ -13,14 +13,20 @@ const fetchUserLocation = async () => {
 export const searchYouTubeVideos = async (searchQuery, maxResults = 20) => {
   try {
     const userLocation = await fetchUserLocation();
-    const API_URL = 'https://www.googleapis.com/youtube/v3/search';
-    console.log(API_KEY);
+    const API_URL = 'https://www.googleapis.com/youtube/v3/searchsd,fns';
+    // console.log(API_KEY);
     const response = await axios.get(API_URL, {
       params: {
         key: API_KEY,
         part: 'snippet',
+        location: `${userLocation.latitude},${userLocation.longitude}`,
         maxResults,
+        locationRadius:'1000km',
+        videoDuration:'medium',
         q: searchQuery,
+ 
+        type:'video',
+      
         // location: `${userLocation.latitude},${userLocation.longitude}`,
         // locationRadius: '10mi', // Set your desired radius
       },

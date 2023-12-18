@@ -40,8 +40,13 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/music" element={<Music />} />
-              <Route path="/watch/:videoId" element={<Watch />} />
-              <Route path="/search" element={<Search />} />
+              <Route
+                  path="/watch/:videoId"
+                  element={<Watch handleVideoSelect={handleVideoSelect} />}
+                />
+<Route path="/search/:q" element={<Search  />} />
+
+
             </Routes>
           </div>
         </div>

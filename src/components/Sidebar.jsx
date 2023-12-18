@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
+import logo from '../assets/uto1.png';
 function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
@@ -20,6 +20,7 @@ function Sidebar() {
       }`}
       
     >
+      <img src={logo} alt="" className='' />
       <button onClick={toggleSidebar} className=" text-white hover:underline ">
         {sidebarOpen ? (
           <i className="material-icons text-4xl mb-8">close</i>

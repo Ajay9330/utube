@@ -2,9 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-    background-color: black;
+:root {
+  background-color: black;
 }
-.ytp-chrome-top .ytp-show-cards-title{
-    display: block;
+
+.ytp-chrome-top .ytp-show-cards-title {
+  display: block;
 }
+
+.minplayer {
+  background-color: aqua;
+  animation: anim infinite 6s alternate,neonGlow infinite 2s alternate;
+}
+
+@keyframes anim {
+  0% {
+
+    background-color: pink;
+    background: linear-gradient();
+  }
+  25%{
+    background-color: blueviolet;
+  }
+  50%{
+    background-color: rgb(28, 255, 28);
+  }
+  70%{
+    background-color: rgb(230, 110, 110);
+  }
+  100% {
+    background-color: aqua;
+  }
+}
+
+@keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes neonGlow {
+    0% {
+      border-color: #4D90FE; /* Neon blue */
+      box-shadow: 0 0 5px #4D90FE; /* Neon blue glow */
+    }
+    100% {
+      border-color: #FFD700; /* Neon yellow */
+      box-shadow: -20 -10 15px 45px #edcb08; /* Neon yellow glow */
+    }
+  }
