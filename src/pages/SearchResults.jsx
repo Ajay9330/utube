@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Video from '../components/Video';
 import { searchYouTubeVideos } from '../services/api';
 import ProfessionalSkeleton from '../components/ProfessionalSkeleton';
+import { useParams } from 'react-router-dom';
 
-const SearchResults = ({ query }) => {
+const SearchResults = ({ }) => {
   const [videos, setVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const { query } = useParams();
   useEffect(() => {
-    // alert("hi");
+    alert(query);
+    setLoading(true);
     async function fetchSearchResults() {
       try {
         const videoData = await searchYouTubeVideos(query);

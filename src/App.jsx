@@ -44,7 +44,7 @@ function App() {
                   path="/watch/:videoId"
                   element={<Watch handleVideoSelect={handleVideoSelect} />}
                 />
-<Route path="/search/:q" element={<Search  />} />
+<Route path="/search/:query" element={<Search  />} />
 
 
             </Routes>

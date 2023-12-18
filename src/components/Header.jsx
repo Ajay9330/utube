@@ -14,7 +14,7 @@ const Header = () => {
   const handleSearchSubmit = (event) => {
     event.preventDefault();
     if (searchQuery.trim()=="" || searchQuery==null){
-      searchQuery("");
+      setSearchQuery("");
       return;
     }else{
   
