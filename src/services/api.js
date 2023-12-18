@@ -19,10 +19,11 @@ export const searchYouTubeVideos = async (searchQuery, maxResults = 20) => {
       params: {
         key: API_KEY,
         part: 'snippet',
-        location: `${userLocation.latitude},${userLocation.longitude}`,
+        // location: `${userLocation.latitude},${userLocation.longitude}`,
+        regionCode:userLocation.country,
         maxResults,
-        locationRadius:'1000km',
-        videoDuration:'medium',
+        // locationRadius:'1000km',
+        // videoDuration:'medium',
         q: searchQuery,
  
         type:'video',

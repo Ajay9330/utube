@@ -14,10 +14,10 @@ const latitudeRange = { min: data.latitude - 5, max: data.latitude + 5 };
 const longitudeRange = { min: data.longitude - 5, max: data.longitude + 5 };
 
 // Generate random latitude and longitude within the specified range
-const latitude = latitudeRange.min + Math.random() * (latitudeRange.max - latitudeRange.min);
-const longitude = longitudeRange.min + Math.random() * (longitudeRange.max - longitudeRange.min);
-// const latitude=data.latitude;
-// const longitude=data.longitude;
+// const latitude = latitudeRange.min + Math.random() * (latitudeRange.max - latitudeRange.min);
+// const longitude = longitudeRange.min + Math.random() * (longitudeRange.max - longitudeRange.min);
+const latitude=data.latitude;
+const longitude=data.longitude;
 
 // Now, latitude and longitude are random coordinates within the specified range
 
